@@ -6,8 +6,11 @@ import javax.persistence.*;
 @Table(name = "user")
 public class User {
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @Column(name = "email")
     private String email;
     private String password;
     private String first_name;
@@ -41,6 +44,7 @@ public class User {
         this.address = address;
         this.username = username;
     }
+
 
     public String getEmail() {
         return email;
