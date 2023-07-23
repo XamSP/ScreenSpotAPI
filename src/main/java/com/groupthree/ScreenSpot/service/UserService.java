@@ -17,16 +17,5 @@ public class UserService {
     public List<User> getAllUser(){
         return userRepository.findAll();
     }
-//    @Override
-//    public User saveUser(User user) {
-//        return userRepository.saveAll(user);
-//    }
-//
-//    public User getUserById(Long userId);
-//
-//    public void deleteUserById(Long userId);
-//
-//    public User updateDepartment(Long userId, User user);
-//
-//    public User getUserByName(String userName);
+
 }

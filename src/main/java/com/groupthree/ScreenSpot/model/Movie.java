@@ -6,14 +6,30 @@ import javax.persistence.*;
 @Table(name = "movie")
 public class Movie {
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @Column(name = "title")
     private String title;
+
+    @Column(name = "release_year")
     private int release_year;
+
+    @Column(name = "genre")
     private String genre;
+
+    @Column(name = "director")
     private String director;
 
     public Movie(Long id, String title, int release_year, String genre, String director) {
+        this.title = title;
+        this.release_year = release_year;
+        this.genre = genre;
+        this.director = director;
+    }
+
+    public Movie(String title, int release_year, String genre, String director) {
         this.title = title;
         this.release_year = release_year;
         this.genre = genre;

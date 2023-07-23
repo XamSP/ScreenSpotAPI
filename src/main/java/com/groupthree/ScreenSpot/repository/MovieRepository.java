@@ -20,4 +20,6 @@ public interface MovieRepository extends JpaRepository<Movie, String> {
     @Query(value = "SELECT * FROM screenspot.Movie WHERE genre = :genre", nativeQuery = true)
     List<Movie> findGenre(@Param("genre") String genre);
 
+    @Query(value = "SELECT * FROM screenspot.Movie", nativeQuery = true)
+    List<Movie> findAllMovies();
 }

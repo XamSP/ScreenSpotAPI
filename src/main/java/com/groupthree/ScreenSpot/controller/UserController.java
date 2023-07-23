@@ -10,28 +10,27 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/api/")
 public class UserController {
 
     @Autowired
     private UserRepository userRepository;
-    private UserService userService;
+
+    //private UserService userService;
 
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    @PostMapping("/newcustomer")
+    @PostMapping("/newUser")
     public User createUser(@RequestBody User user){
-        //return this.userRepository.save(user);
-        return null;
+        return this.userRepository.save(user);
     }
 
-    @GetMapping("/allcustomers")
+    @GetMapping("/all")
     public List<User> getAllUsers(){
         return this.userRepository.findAllUsers();
     }
 
-    @GetMapping(value = "/customers/{id}")
+    @GetMapping(value = "/user/{id}")
     public List<User> getCustomerByEmail(@PathVariable long id) { //might need to change long to Long
         return userRepository.findById(id);
     }

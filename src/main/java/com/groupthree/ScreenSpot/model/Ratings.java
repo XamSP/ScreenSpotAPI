@@ -2,10 +2,7 @@ package com.groupthree.ScreenSpot.model;
 
 import com.groupthree.ScreenSpot.Enum.StarRating;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Timestamp;
 import java.math.BigDecimal;
 
@@ -13,14 +10,20 @@ import java.math.BigDecimal;
 @Table(name = "ratings")
 public class Ratings {
 
+
+    @Column(name = "stars")
     private int stars;
 
+    @Column(name = "user_id")
     private int user_id;
 
+    @Column(name = "item_id")
     private int item_id;
 
+    @Column(name = "rating")
     private BigDecimal rating;
 
+    @Column(name = "created_at")
     private Timestamp created_at;
 
     public Ratings(int stars, int user_id, int item_id, BigDecimal rating, Timestamp created_at) {

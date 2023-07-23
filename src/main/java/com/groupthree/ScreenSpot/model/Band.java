@@ -6,10 +6,17 @@ import javax.persistence.*;
 @Table(name = "band")
 public class Band {
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "genre")
     private String genre;
+
+    @Column(name = "year_formed")
     private int year_formed;
 
     public Band(String name, String genre, int year_formed) {

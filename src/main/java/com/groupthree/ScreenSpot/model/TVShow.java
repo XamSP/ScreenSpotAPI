@@ -7,12 +7,20 @@ import javax.persistence.*;
 public class TVShow {
 
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(name = "title")
     private String title;
+
+    @Column(name = "release_year")
     private int release_year;
+
+    @Column(name = "genre")
     private String genre;
+
+    @Column(name = "season_count")
     private int season_count;
 
     public TVShow(String title, int release_year, String genre, int season_count) {
